@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const goodToastBs = new bootstrap.Toast(goodToast);
 
     window.showBadToast = (callback) => {
-        document.getElementById('badToastBody').textContent = `Callback ${callback} isn't real!`;
+        document.getElementById('badToastBody').innerHTML = `Callback <i><<${callback}>></i> isn't real!`;
         badToastBs.show();
     };
 
