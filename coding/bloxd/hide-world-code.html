@@ -43,6 +43,14 @@
         .d-grid.gap-2 {
           align-self: stretch;
         }
+        .toast-red {
+          background-color: #dc3545;
+          color: white;
+        }
+        .toast-red .toast-header {
+          background-color: #b02a37;
+          color: white;
+        }
     </style>
     <script src="hide-code.js"></script>
   </head>
@@ -65,7 +73,7 @@
         <textarea class="form-control" id="callbacks"></textarea>
     </div>
 
-    <div class="d-grid gap-2 w-100">
+    <div class="d-grid gap-2">
       <button type="button" class="btn btn-primary" onclick="onSubmitHidecode();">Submit</button>
     </div>
     <br>
@@ -81,5 +89,30 @@
     
     <p><i class="fas fa-info-circle" id="tip_one" style="color: lightskyblue"></i> [1] Enter all World Code callbacks, seperated with a new line.</p>
     <p><i class="fas fa-info-circle" id="tip_two" style="color: lightskyblue"></i> [2] Hide the <i>&lt;&lt;Code Block>></i> from non-admins!</p>
+
+    <div class="toast-container toast-red bottom-0 end-0 p-3">
+      <div id="badToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <img src="/favicon.png" class="rounded me-2" alt="GDPowerTrip">
+          <strong class="me-auto">Power Trip</strong>
+          <small>just now</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body" id="badToastBody"></div>
+      </div>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div id="goodToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <img src="/favicon.png" class="rounded me-2" alt="GDPowerTrip">
+          <strong class="me-auto">Power Trip</strong>
+          <small>just now</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body" id="goodToastBody">Your code has been hidden!</div>
+      </div>
+    </div>
+
   </body>
 </html>
