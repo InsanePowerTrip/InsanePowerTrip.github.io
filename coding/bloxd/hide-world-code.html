@@ -76,13 +76,24 @@
     </div>
     <br>
 
-    <div class="input-group">
-        <span class="input-group-text user-select-none">World Code</span>
-        <textarea class="form-control fake-pre rdonly" readonly id="worldcode"></textarea>
+    <div class="input-group position-relative mb-3">
+      <span class="input-group-text user-select-none">World Code</span>
+      
+      <textarea class="form-control fake-pre rdonly" readonly id="worldcode"></textarea>
+      
+      <button class="btn btn-sm btn-outline-secondary position-absolute top-0 end-0 m-2" onclick="copyToClipboard('worldcode')">
+        <i class="fas fa-copy"></i>
+      </button>
     </div>
-    <div class="input-group">
-        <span class="input-group-text user-select-none">Code Block <sup><a href="#tip_two">[2]</a></sup></span>
-        <textarea class="form-control fake-pre rdonly" readonly id="codeblock"></textarea>
+
+    <div class="input-group position-relative mb-3">
+      <span class="input-group-text user-select-none">Code Block <sup><a href="#tip_two">[2]</a></sup></span>
+      
+      <textarea class="form-control fake-pre rdonly" readonly id="codeblock"></textarea>
+      
+      <button class="btn btn-sm btn-outline-secondary position-absolute top-0 end-0 m-2" onclick="copyToClipboard('codeblock')">
+        <i class="fas fa-copy"></i>
+      </button>
     </div>
     
     <p><i class="fas fa-info-circle" id="tip_one" style="color: lightskyblue"></i> [1] Enter all World Code callbacks, seperated with a new line.</p>
@@ -108,7 +119,7 @@
           <small>just now</small>
           <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
-        <div class="toast-body">Your code has been hidden!</div>
+        <div class="toast-body" id="goodToastBody">Your code has been hidden!</div>
       </div>
     </div>
 

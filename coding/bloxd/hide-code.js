@@ -31,8 +31,28 @@ document.addEventListener('DOMContentLoaded', () => {
         badToastBs.show();
     };
 
-    window.showGoodToast = () => goodToastBs.show();
+    window.showGoodToast = (isClipboard=false) => {
+        if (isClipboard) {
+            document.getElementById('goodToastBody').innerHTML = `Successfully copied to clipboard!`;
+        } else {
+            document.getElementById('goodToastBody').innerHTML = `Your code has been hidden!`;
+        }
+        goodToastBs.show();
+    };
 });
+
+function copyToClipboard(id) {
+  const textarea = document.getElementById(id);
+  textarea.select();
+  textarea.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(textarea.value)
+    .then(() => {
+      showGoodToast(true);
+    })
+    .catch(() => {
+      alert("Failed to copy!");
+    });
+}
 
 function onSubmitHidecode() {
     const enteredCallbacks = document.getElementById("callbacks").value.split(/\s+/);
