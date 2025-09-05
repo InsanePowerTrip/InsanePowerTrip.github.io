@@ -20,15 +20,15 @@ onPlayerStartChargingItem onPlayerFinishChargingItem doPeriodicSave`;
 const allCallbacks = allValidCallbackString.split(/\s+/);
 
 function onSubmitHidecode() {
-    const enteredCallbacks = document.getElementById("callbacks").innerText.split(/\s+/);
-    const worldCode = document.getElementById("ogcode").innerText;
+    const enteredCallbacks = document.getElementById("callbacks").value.split(/\s+/);
+    const worldCode = document.getElementById("ogcode").value;
 
     let resultBlockCode = worldCode + `;\n`;
     let resultWorldCode = "let nd=false,ltndt=false;methods={};lc=(n,p=null)=>{try{const m=methods[n];if(!m){if(p)api.sendMessage(p,`Error: Callback ${n} doesnt work! Please wait for someone to fix this!`);nd=true;return false}return m}catch(e){if(p)api.sendMessage(p,`Error: ${e}! Please wait for the owner to fix this!`);nd=true;return false}};tick=()=>{if(nd){try{typeof methods.tick=='function'&&(methods.tick(),nd=false,ltndt=true)}catch(e){nd=true,ltndt=false}}!nd&&ltndt&&(ltndt=false,api.broadcastMessage('Someone has fixed!'),api.getPlayerIds().forEach(id=>onPlayerJoin(id)))};\n";
     for (let i=0; i!=enteredCallbacks.length; i++) {
         if (!(allCallbacks.includes(enteredCallbacks[i]))) {
-            document.getElementById("worldcode").innerText = `Error! << ${enteredCallbacks[i]} >> isn't a valid callback!`;
-            document.getElementById("codeblock").innerText = "Error. Read << World Code >> message above!";
+            document.getElementById("worldcode").value = `Error! << ${enteredCallbacks[i]} >> isn't a valid callback!`;
+            document.getElementById("codeblock").value = "Error. Read << World Code >> message above!";
             return;
         };
         resultBlockCode += `methods.${enteredCallbacks[i]} = ${enteredCallbacks[i]};`;
@@ -39,6 +39,6 @@ function onSubmitHidecode() {
         resultBlockCode += `methods.tick = ()=>{};`;
     }
 
-    document.getElementById("worldcode").innerText = resultWorldCode;
-    document.getElementById("codeblock").innerText = resultBlockCode;
+    document.getElementById("worldcode").value = resultWorldCode;
+    document.getElementById("codeblock").value = resultBlockCode;
 }
