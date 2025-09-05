@@ -19,11 +19,20 @@ onPlayerStartChargingItem onPlayerFinishChargingItem doPeriodicSave`;
 
 const allCallbacks = allValidCallbackString.split(/\s+/);
 
-const badToast = document.getElementById('badToast');
-const badToastBs = bootstrap.Toast.getOrCreateInstance(badToast);
+document.addEventListener('DOMContentLoaded', () => {
+    const badToast = document.getElementById('badToast');
+    const badToastBs = new bootstrap.Toast(badToast);
 
-const goodToast = document.getElementById('goodToast');
-const goodToastBs = bootstrap.Toast.getOrCreateInstance(goodToast);
+    const goodToast = document.getElementById('goodToast');
+    const goodToastBs = new bootstrap.Toast(goodToast);
+
+    window.showBadToast = (callback) => {
+        document.getElementById('badToastBody').textContent = `Callback ${callback} isn't real!`;
+        badToastBs.show();
+    };
+
+    window.showGoodToast = () => goodToastBs.show();
+});
 
 function onSubmitHidecode() {
     const enteredCallbacks = document.getElementById("callbacks").value.split(/\s+/);
@@ -35,7 +44,7 @@ function onSubmitHidecode() {
         if (!(allCallbacks.includes(enteredCallbacks[i]))) {
             document.getElementById("worldcode").value = '';
             document.getElementById("codeblock").value = '';
-            badToastBs.show()
+            showBadToast(enteredCallbacks[i]);
             return;
         };
         resultBlockCode += `methods.${enteredCallbacks[i]} = ${enteredCallbacks[i]};`;
@@ -50,5 +59,5 @@ function onSubmitHidecode() {
 
     document.getElementById("worldcode").value = resultWorldCode;
     document.getElementById("codeblock").value = resultBlockCode;
-    goodToastBs.show()
+    showGoodToast();
 }
