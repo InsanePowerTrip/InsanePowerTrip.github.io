@@ -32,6 +32,9 @@
         div {
             padding: 10px
         }
+        .user-select-none {
+            user-select: none !important;
+        }
     </style>
     <script src="hide-code.js"></script>
   </head>
@@ -46,25 +49,25 @@
     </nav>
     <h1>Welcome to the bloxd.io -> Hide World Code section!</h1>
     <div class="input-group">
-        <span class="input-group-text">Code</span>
+        <span class="input-group-text user-select-none">Code</span>
         <textarea class="form-control" id="ogcode"></textarea>
     </div>
     <div class="input-group">
-        <span class="input-group-text">Enter all Callbacks <sup>[1]</sup></span>
+        <span class="input-group-text user-select-none">Enter all Callbacks <sup>[1]</sup></span>
         <textarea class="form-control" id="callbacks"></textarea>
     </div>
 
-    <div class="d-grip gap-2">
+    <div class="d-grid gap-2">
         <button type="button" class="btn btn-primary" onclick="onSubmitHidecode();">Submit</button>
     </div>
     <br>
 
     <div class="input-group">
-        <span class="input-group-text">World Code</span>
+        <span class="input-group-text user-select-none">World Code</span>
         <textarea class="form-control fake-pre" readonly id="worldcode"></textarea>
     </div>
     <div class="input-group">
-        <span class="input-group-text">Code Block <sup>[2]</sup></span>
+        <span class="input-group-text user-select-none">Code Block <sup>[2]</sup></span>
         <textarea class="form-control fake-pre" readonly id="codeblock"></textarea>
     </div>
     
