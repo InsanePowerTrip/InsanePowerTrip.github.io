@@ -23,7 +23,7 @@ const badToast = document.getElementById('badToast');
 const badToastBs = bootstrap.Toast.getOrCreateInstance(badToast);
 
 const goodToast = document.getElementById('goodToast');
-const goodToastBs = bootstrap.Toast.getOrCreateInstance(goodToastBs);
+const goodToastBs = bootstrap.Toast.getOrCreateInstance(goodToast);
 
 function onSubmitHidecode() {
     const enteredCallbacks = document.getElementById("callbacks").value.split(/\s+/);
