@@ -57,6 +57,34 @@
           background-color: #b02a37;
           color: white;
         }
+        @media (prefers-color-scheme: dark) {
+          body {
+            background-color: #121212; /* very dark grey / almost black */
+            color: white;
+          }
+
+          a {
+            color: #ffffff;
+          }
+
+          a:hover {
+            color: #cccccc;
+          }
+
+          nav, .breadcrumb, .scrollspy-container {
+            background-color: #1e1e1e;
+          }
+
+          pre, code {
+            background-color: #1e1e1e;
+            color: #ffffff;
+          }
+
+          .nav-link.active {
+            background-color: #333333;
+            color: #ffffff;
+          }
+        }
     </style>
     <script src="hide-code.js"></script>
   </head>

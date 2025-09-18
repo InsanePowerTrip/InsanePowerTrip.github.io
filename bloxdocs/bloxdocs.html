@@ -23,6 +23,34 @@
     a { color: black; text-decoration: none; }
     button:hover a { color: white; }
     .scrollspy-container { height: 80vh; overflow-y: auto; position: relative; }
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #121212; /* very dark grey / almost black */
+        color: white;
+      }
+
+      a {
+        color: #ffffff;
+      }
+
+      a:hover {
+        color: #cccccc;
+      }
+
+      nav, .breadcrumb, .scrollspy-container {
+        background-color: #1e1e1e;
+      }
+
+      pre, code {
+        background-color: #1e1e1e;
+        color: #ffffff;
+      }
+
+      .nav-link.active {
+        background-color: #333333;
+        color: #ffffff;
+      }
+    }
   </style>
 </head>
 <body>
@@ -87,7 +115,7 @@
             <ul>
               <li><pre><code class="language-js">api.setPosition(entityId, x, y, z);</code></pre></li>
               <li>entityId - type EntityId</li>
-              <li>x - type Number | Number [] <i>(if an array is passed, you need not to provide y and z)</i></li>
+              <li>x - type Number | Number[] <i>(if an array is passed, you need not to provide y and z)</i></li>
               <li>y - type Number</li>
               <li>z - type Number</li>
               <li>returns:<pre><code class="language-js">void;</code></pre></li>
