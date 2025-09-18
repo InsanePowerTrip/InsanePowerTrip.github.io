@@ -44,6 +44,7 @@
               <a class="nav-link" href="#apis">APIs</a>
               <div class="nav nav-pills flex-column ms-3">
                 <a class="nav-link my-1" href="#api_getposition">api.getPosition()</a>
+                <a class="nav-link my-1" href="#api_setposition">api.setPosition()</a>
               </div>
               <a class="nav-link my-1" href="#types">Referenced Types</a>
               <div class="nav nav-pills flex-column ms-3">
@@ -57,7 +58,7 @@
         <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true" class="scrollspy-container" tabindex="0">
           <div id="intro">
             <h4>Introduction</h4>
-            <p>Welcome to BloxDocs! Here, <i>(as of now)</i> you can find ways to interact with <a href="https://bloxd.io">bloxd.io</a> outside the website!</p>
+            <p>Welcome to BloxDocs! Here, you can find ways to interact with <a href="https://bloxd.io">bloxd.io</a> using code!</p>
             <p>Please note that some of these might be against the <a href="https://bloxd.io">bloxd.io</a> Terms of service. Those sections will have a warning in them.</p>
           </div>
           <div id="official_coding">
@@ -74,7 +75,19 @@
             <ul>
               <li><pre><code class="language-js">api.getPosition(entityId);</code></pre></li>
               <li>entityId - type EntityId</li>
-              <li>returns <pre><code class="language-js">[Number, Number, Number];</code></pre></li>
+              <li>returns:<pre><code class="language-js">[Number, Number, Number];</code></pre></li>
+            </ul>
+          </div>
+          <div id="api_setposition">
+            <h6>api.setPosition()</h6>
+            <p>Sets the position of an entity.</p>
+            <ul>
+              <li><pre><code class="language-js">api.setPosition(entityId, x, y, z);</code></pre></li>
+              <li>entityId - type EntityId</li>
+              <li>x - type Number | Number [] <i>(if an array is passed, you need not to provide y and z)</i></li>
+              <li>y - type Number</li>
+              <li>z - type Number</li>
+              <li>returns:<pre><code class="language-js">void;</code></pre></li>
             </ul>
           </div>
           <div id="types">
