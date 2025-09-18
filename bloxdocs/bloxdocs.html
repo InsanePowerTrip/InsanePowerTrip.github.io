@@ -45,10 +45,13 @@
               <div class="nav nav-pills flex-column ms-3">
                 <a class="nav-link my-1" href="#api_getposition">api.getPosition()</a>
                 <a class="nav-link my-1" href="#api_setposition">api.setPosition()</a>
+                <a class="nav-link my-1" href="#api_getplayerids">api.getPlayerIds()</a>
+                <a class="nav-link my-1" href="#api_getnumplayers">api.getNumPlayers()</a>
               </div>
               <a class="nav-link my-1" href="#types">Referenced Types</a>
               <div class="nav nav-pills flex-column ms-3">
-                <a class="nav-link my-1" href="#types_entityId">entityId</a>
+                <a class="nav-link my-1" href="#types_entityId">EntityId / LifeformId</a>
+                <a class="nav-link my-1" href="#types_PlayerId">PlayerId</a>
               </div>
             </div>
           </div>
@@ -90,14 +93,35 @@
               <li>returns:<pre><code class="language-js">void;</code></pre></li>
             </ul>
           </div>
+          <div id="api_getplayerids">
+            <h6>api.getPlayerIds()</h6>
+            <p>Gets the Player IDs for everyone currently in the lobby.</p>
+            <ul>
+              <li><pre><code class="language-js">api.getPlayerIds();</code></pre></li>
+              <li>returns:<pre><code class="language-js">PlayerId[];</code></pre></li>
+            </ul>
+          </div>
+          <div id="api_getnumplayers">
+            <h6>api.getNumPlayers()</h6>
+            <p>Gets the number of Players in the lobby.</p>
+            <ul>
+              <li><pre><code class="language-js">api.getNumPlayers();</code></pre></li>
+              <li>returns:<pre><code class="language-js">Number;</code></pre></li>
+            </ul>
+          </div>
           <div id="types">
             <h5>Referenced Types</h5>
             <p>The following section has all the bloxd types. This includes EntityId, EarthSkybox, etc.</p>
             <div id="types_entityId">
               <h6>EntityId / LifeformId</h6>
               <p>The ID of any Player or living entity.</p>
-              <p>Get a PlayerId using: <pre><code class="language-js">api.getPlayerId("Username");</code></pre> or: <pre><code class="language-js">api.getPlayerIds();</code></pre></p>
+              <p>Get a PlayerId using the steps below:</p>
               <p>Get an EntityId after you summon it or via callbacks.</p>
+            </div>
+            <div id="types_PlayerId">
+              <h6>PlayerId</h6>
+              <p>The ID of any Player.</p>
+              <p>Get the PlayerId using: <pre><code class="language-js">api.getPlayerId("Username");</code></pre> or: <pre><code class="language-js">api.getPlayerIds();</code></pre></p>
             </div>
           </div>
         </div>
