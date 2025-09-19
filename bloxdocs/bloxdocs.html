@@ -75,6 +75,7 @@
                 <a class="nav-link my-1" href="#api_setposition">api.setPosition()</a>
                 <a class="nav-link my-1" href="#api_getplayerids">api.getPlayerIds()</a>
                 <a class="nav-link my-1" href="#api_getnumplayers">api.getNumPlayers()</a>
+                <a class="nav-link my-1" href="#api_setoptimisations">api.setOptimisations()</a>
               </div>
               <a class="nav-link my-1" href="#types">Referenced Types</a>
               <div class="nav nav-pills flex-column ms-3">
@@ -115,9 +116,9 @@
             <ul>
               <li><pre><code class="language-js">api.setPosition(entityId, x, y, z);</code></pre></li>
               <li>entityId - type EntityId</li>
-              <li>x - type Number | Number[] <i>(if an array is passed, you need not to provide y and z)</i></li>
-              <li>y - type Number</li>
-              <li>z - type Number</li>
+              <li>x - type Number | Number[] <i>(if an array is passed, you need not provide y and z)</i></li>
+              <li>y - type Number | null</li>
+              <li>z - type Number | null</li>
               <li>returns:<pre><code class="language-js">void;</code></pre></li>
             </ul>
           </div>
@@ -135,6 +136,15 @@
             <ul>
               <li><pre><code class="language-js">api.getNumPlayers();</code></pre></li>
               <li>returns:<pre><code class="language-js">Number;</code></pre></li>
+            </ul>
+          </div>
+          <div id="api_setoptimisations">
+            <h6>api.setOptimisations()</h6>
+            <p>Changes whether to enable optimizing block placement (like World Builder) or not.</p>
+            <ul>
+              <li><pre><code class="language-js">api.setOptimisations(optimise);</code></pre></li>
+              <li>optimise - type Boolean</li>
+              <li>returns:<pre><code class="language-js">null;</code></pre></li>
             </ul>
           </div>
           <div id="types">
