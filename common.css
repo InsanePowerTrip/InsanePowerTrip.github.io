@@ -40,8 +40,11 @@
         color: #ffffff;
       }
 
-      .breadcrumb-item.active {
+      .breadcrumb-item {
         background-color: #333333;
-        color: #ffffff;
+      }
+      
+      .breadcrumb-item.active {
+        color: #DED6DA;
       }
     }
