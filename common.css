@@ -12,6 +12,11 @@
       button:hover a {
         color: white;
       }
+      .container {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
       @media (prefers-color-scheme: dark) {
       body {
         background-color: #121212; /* very dark grey / almost black */
@@ -43,7 +48,7 @@
       .breadcrumb-item {
         background-color: #333333;
       }
-      
+
       .breadcrumb-item.active {
         color: #DED6DA;
       }

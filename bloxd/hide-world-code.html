@@ -19,74 +19,75 @@
     <script src="/bloxd/hide-code.js"></script>
   </head>
   <body>
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
-            <li class="breadcrumb-item"><a href="bloxd.html">bloxd.io</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Hide World Code</li>
-        </ol>
-    </nav>
-    <h1>Welcome to the bloxd.io -> Hide World Code section!</h1>
-    <div class="input-group">
-        <span class="input-group-text user-select-none">Code</span>
-        <textarea class="form-control" id="ogcode"></textarea>
-    </div>
-    <div class="input-group">
-        <span class="input-group-text user-select-none">Enter all Callbacks <sup><a href="#tip_one">[1]</a></sup></span>
-        <textarea class="form-control" id="callbacks"></textarea>
-    </div>
+    <div class="container">
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+              <li class="breadcrumb-item"><a href="bloxd.html">bloxd.io</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Hide World Code</li>
+          </ol>
+      </nav>
+      <h1>Welcome to the bloxd.io -> Hide World Code section!</h1>
+      <div class="input-group">
+          <span class="input-group-text user-select-none">Code</span>
+          <textarea class="form-control" id="ogcode"></textarea>
+      </div>
+      <div class="input-group">
+          <span class="input-group-text user-select-none">Enter all Callbacks <sup><a href="#tip_one">[1]</a></sup></span>
+          <textarea class="form-control" id="callbacks"></textarea>
+      </div>
 
-    <div class="d-grid gap-2">
-      <button type="button" class="btn btn-primary" onclick="onSubmitHidecode();">Submit</button>
-    </div>
-    <br>
+      <div class="d-grid gap-2">
+        <button type="button" class="btn btn-primary" onclick="onSubmitHidecode();">Submit</button>
+      </div>
+      <br>
 
-    <div class="input-group position-relative mb-3">
-      <span class="input-group-text user-select-none">World Code</span>
-      
-      <textarea class="form-control fake-pre rdonly" readonly id="worldcode"></textarea>
-      
-      <button class="btn btn-sm btn-outline-secondary position-absolute top-0 end-0 m-2" onclick="copyToClipboard('worldcode')">
-        <i class="fas fa-copy"></i>
-      </button>
-    </div>
+      <div class="input-group position-relative mb-3">
+        <span class="input-group-text user-select-none">World Code</span>
+        
+        <textarea class="form-control fake-pre rdonly" readonly id="worldcode"></textarea>
+        
+        <button class="btn btn-sm btn-outline-secondary position-absolute top-0 end-0 m-2" onclick="copyToClipboard('worldcode')">
+          <i class="fas fa-copy"></i>
+        </button>
+      </div>
 
-    <div class="input-group position-relative mb-3">
-      <span class="input-group-text user-select-none">Code Block <sup><a href="#tip_two">[2]</a></sup></span>
+      <div class="input-group position-relative mb-3">
+        <span class="input-group-text user-select-none">Code Block <sup><a href="#tip_two">[2]</a></sup></span>
+        
+        <textarea class="form-control fake-pre rdonly" readonly id="codeblock"></textarea>
+        
+        <button class="btn btn-sm btn-outline-secondary position-absolute top-0 end-0 m-2" onclick="copyToClipboard('codeblock')">
+          <i class="fas fa-copy"></i>
+        </button>
+      </div>
       
-      <textarea class="form-control fake-pre rdonly" readonly id="codeblock"></textarea>
-      
-      <button class="btn btn-sm btn-outline-secondary position-absolute top-0 end-0 m-2" onclick="copyToClipboard('codeblock')">
-        <i class="fas fa-copy"></i>
-      </button>
-    </div>
-    
-    <p><i class="fas fa-info-circle" id="tip_one" style="color: lightskyblue"></i> [1] Enter all World Code callbacks, seperated with a new line.</p>
-    <p><i class="fas fa-info-circle" id="tip_two" style="color: lightskyblue"></i> [2] Hide the <i>&lt;&lt;Code Block>></i> from non-admins!</p>
+      <p><i class="fas fa-info-circle" id="tip_one" style="color: lightskyblue"></i> [1] Enter all World Code callbacks, seperated with a new line.</p>
+      <p><i class="fas fa-info-circle" id="tip_two" style="color: lightskyblue"></i> [2] Hide the <i>&lt;&lt;Code Block>></i> from non-admins!</p>
 
-    <div class="toast-container bottom-0 end-0 p-3">
-      <div id="badToast" class="toast tadoast-red" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header">
-          <img src="/favicon_16.png" class="rounded me-2" alt="GDPowerTrip">
-          <strong class="me-auto">Power Trip</strong>
-          <small>just now</small>
-          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      <div class="toast-container bottom-0 end-0 p-3">
+        <div id="badToast" class="toast tadoast-red" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <img src="/favicon_16.png" class="rounded me-2" alt="GDPowerTrip">
+            <strong class="me-auto">Power Trip</strong>
+            <small>just now</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body" id="badToastBody"></div>
         </div>
-        <div class="toast-body" id="badToastBody"></div>
+      </div>
+
+      <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="goodToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <img src="/favicon_16.png" class="rounded me-2" alt="GDPowerTrip">
+            <strong class="me-auto">Power Trip</strong>
+            <small>just now</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body" id="goodToastBody">Your code has been hidden!</div>
+        </div>
       </div>
     </div>
-
-    <div class="toast-container position-fixed bottom-0 end-0 p-3">
-      <div id="goodToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header">
-          <img src="/favicon_16.png" class="rounded me-2" alt="GDPowerTrip">
-          <strong class="me-auto">Power Trip</strong>
-          <small>just now</small>
-          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-        <div class="toast-body" id="goodToastBody">Your code has been hidden!</div>
-      </div>
-    </div>
-
   </body>
 </html>
