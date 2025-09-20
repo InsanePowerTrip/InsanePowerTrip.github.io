@@ -39,4 +39,9 @@
         background-color: #333333;
         color: #ffffff;
       }
+
+      .breadcrumb-item.active {
+        background-color: #333333;
+        color: #ffffff;
+      }
     }
