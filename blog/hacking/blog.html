@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>The Ultimate Guide on Hacking</title>
+    <link rel="icon" href="/blog/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/blog/favicon.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/fa-kit/css/all.min.css">
+    <link rel="stylesheet" href="/common.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+    <script src="/blog/hacking/blog.js"></script>
+
+    <meta name="description" content="A Blog owned by Power Trip!">
+    <meta property="og:title" content="A Blog from @power_trip_gd">
+    <meta property="og:description" content="This is my personal website!">
+    <meta property="og:image" content="https://insanepowertrip.github.io/banner.png">
+    <meta property="og:url" content="https://insanepowertrip.github.io">
+    <meta property="og:type" content="website">
+
+    <style>
+      body { margin: 0; padding: 2rem; }
+      a { color: black; text-decoration: none; }
+      button:hover a { color: white; }
+      .scrollspy-container { height: 80vh; overflow-y: auto; position: relative; }
+    </style>
+    
+  </head>
+  <body>
+    <div class="container-blog">
+      <div class="row">
+        <div class="col-12">
+          <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
+                  <li class="breadcrumb-item"><a href="/blog/index.html">Blog</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">The Ultimate Guide on Hacking</li>
+              </ol>
+          </nav>
+        </div>
+        
+        <div class="col-4">
+          <nav id="scrollspy" class="h-100 flex-column align-items-stretch pe-4 border-end">
+            <div class="nav nav-pills flex-column">
+              <a class="nav-link" href="#intro">Introduction</a>
+              <a class="nav-link" href="#disclaimer"><i class="fas fa-exclamation-triangle orange"></i> Disclaimer</a>
+              <a class="nav-link" href="#types-of-hacking">Types of Hacking</a>
+              <div class="nav nav-pills flex-column ms-3">
+                <a class="nav-link" href="#device-acc-access">Account Access (devices)</a>
+                <a class="nav-link" href="#how-leds-work">How does LEDs work?</a>
+                <a class="nav-link" href="#shujis-proposal">Shuji's Proposal?</a>
+                <a class="nav-link" href="#material-research">What Material to Research?</a>
+                <a class="nav-link" href="#gallium-nitride-problem">The Problem with Gallium Nitride</a>
+                <a class="nav-link" href="#shujis-mocvd-reactor">Shuji's MOCVD Reactor</a>
+              </div>
+            </div>
+          </nav>
+        </div>
+
+        <article data-bs-spy="scroll" data-bs-target="#scrollspy" data-bs-smooth-scroll="true" class="col-8 scrollspy-container" tabindex="0">
+          <header>
+            <h1>The Ultimate Guide on Hacking</h1>
+            <p class="text-muted">Posted on 2025-09-21 by Power Trip</p>
+          </header>
+          <section>
+            <h2 id="intro">Introduction</h2>
+            <p>Have you ever dreamed of being a hacker? You don't need to dream anymore, because this guide shows you everything you need to do for any kind of hacking!</p>
+
+            <div id="disclaimer" class="alert alert-warning" role="alert">
+              <p><i class="fas fa-exclamation-triangle orange"></i> DISCLAIMER: I do not condone hacking for illegal purposes. I AM NOT RESPONSIBLE FOR ANY DAMAGE, LOSS, OR LEGAL CONSEQUENCES THAT MAY RESULT FROM THE USE OF THIS GUIDE. This content is intended for educational purposes, ethical hacking practice on your own systems, or in environments where you have explicit permission.</p>
+              <p>Always practice hacking legally and ethically. Only experiment in controlled, authorized environments.</p>
+            </div>
+
+            <h2 id="types-of-hacking">Types of Hacking</h2>
+            <p>There are different types of hacking, such as password cracking, network redirecting, etc. Here are all types:</p>
+
+            <h3 id="device-acc-access">Account Access (devices)</h3>
+            <p>This section covers how to access any account on devices. Different kinds of devices have different methods, so check it below:</p>
+            <h4 id="windows-acc-access"><i class="fab fa-windows cyan"></i> Windows</h4>
+            <p>On Windows, it is not that hard to get access to an account. First, you should figure out if it is a local or Microsoft account.</p>
+            <p>Check if the account has a profile picture that is not the default. If so, it is a Microsoft account. If not, it probably is local instead.</p>
+            <p>Note that if a user uses Windows Hello (PIN) you can NOT crack it. </p>
+            <p>If it is local, follow these steps:</p>
+            <ol>
+                <li>Click the <i class="fas fa-power-off theme-text" title="Power Icon"></i> icon at the bottom right.</li>
+                <li>You will get some power options. Hold Shift AND DO NOT RELEASE IT UNTIL I TELL YOU.</li>
+                <li>Click Restart. If it asks you to confirm restart, click "Restart Anyway"</li>
+                <li>When the computer restarts, you should see "Please wait" in the bottom along with a <span class="spinner-border" role="status"></span> spinner.</li>
+                <li>You will now enter a recovery screen. This is usually blue, unless you are using <i class="fab fa-microsoft cyan"></i> Windows 11, where it might be black instead.</li>
+                <li>Click Troubleshoot → Advanced Options → Command Prompt.</li>
+                <li>If it asks you for a password, that means it was actually a Microsoft Account. Hold the <i class="fas fa-power-off" title="Power Button"></i> button (on the computer) for 5 seconds to turn it off and follow the steps for Microsoft.</li>
+                <li>Since it might not have asked you a password, you now have access to a Command Prompt!</li>
+                <li>Type the command below, to get a new admin user:</li>
+                <pre><code class="language-cmd">net user /add "<i>enter a username</i>" ""</code></pre>
+                <li>Now, close the Command Prompt. Click "Continue to this PC".</li>
+                <li>You now have a new admin user. Choose it and sign in.</li>
+                <li>From there, you can right click <i class="fab fa-windows cyan"></i> Start → Computer Management</li>
+                <li>Open Local Users and Groups → Users and right click the target user to access.</li>
+                <li>Click "Set Password...". This will show you a warning. Click proceed, and change the password.</li>
+            </ol>
+            <p>If it is a Microsoft account, it becomes harder. But, if it has security questions, it becomes so much easier.</p>
+            <p>To figure out if it has security questions, enter a random password and try it. It most likely will say <i>Password Incorrect</i>. Now click "Reset password".</p>
+            <p>If it asks you security questions, that means the user has security questions enabled (obviously). If so, here is how to crack it:</p>
+            <ol>
+                <li>Shut down the computer.</li>
+                <li>Open the computer physically and take out the HDD / SSD.</li>
+                <li>Plug the HDD / SSD into your own computer (as a second drive).</li>
+                <li>In your computer, press <i class="fab fa-windows cyan"></i> Windows + R and type 'cmd'. Hold Ctrl + Shift and click 'OK'</li>
+                <li>It will ask "Do you want Windows Command Processor to make changes on your computer". Click Yes.</li>
+                <li>Now, in Command Prompt, enter the following commands. Press Enter after typing each one:</li>
+                <li>schtasks /create /tn SYS /tr "regedit.exe" /sc once /st 00:00 /rl highest /ru SYSTEM</li>
+                <li>schtasks /run /tn SYS</li>
+                <li>schtasks /delete /tn SYS /f</li>
+                <hr>
+                <li>After that, close Command Prompt. Registry Editor should be opened, so select it.</li>
+                <li>On the side, you will see some options with an arrow. Use those to open HKEY_LOCAL_MACHINE → SAM → SAM → Domains → Accounts → Users.</li>
+                <li>Next, open the Calculator on your computer. THE COMPUTER CALCULATOR IS NECESSARY.</li>
+                <li>Calculate 1000 + the order of the user you want to hack (1 is 1st user created, 2 is 2nd, etc.) and note it down.</li>
+                <li>Click the <img src="/blog/hacking/bars.svg" class="theme-text" /> 3 lines icon, and pick "Programmer"</li>
+                <li>In the "DEC" section, type the number you noted down from the calculation.</li>
+                <li>Note down the result you get in the HEX section.</li>
+                <li>Go back to the Registry Editor. You will see options like 000001F4, 000001F5 etc.</li>
+                <li>Get your noted down HEX number and add 5 zeros at the start (so if you had 3E9, it will be 000003E9)</li>
+            </ol>
+          </section>
+          <hr>
+          <footer>
+            <p>Thank you for reading this! I appreciate it a lot.</p>
+            <p>Remember, don't use this for illegal purposes!</p>
+          </footer>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>
+

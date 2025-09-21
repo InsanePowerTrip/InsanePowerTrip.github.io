@@ -21,6 +21,7 @@
         margin: 2rem auto;
         padding: 0 1rem;
       }
+      .theme-text {color: black;}
       @media (prefers-color-scheme: dark) {
       body {
         background-color: #121212; /* very dark grey / almost black */
@@ -56,4 +57,8 @@
       .breadcrumb-item.active {
         color: #DED6DA;
       }
+
+      .orange {color: orange;}
+      .cyan {color: cyan;}
+      .theme-text {color: white;}
     }
