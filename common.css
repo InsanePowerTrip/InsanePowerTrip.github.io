@@ -23,6 +23,19 @@
       }
       .theme-text {color: black;}
       .fake-pre {white-space: pre; font-family: monospace;}
+      .three-bars {
+        width: 1rem; 
+        height: 1rem;
+
+        background-color: black;
+
+        -webkit-mask: url('/blog/hacking/bars.svg') no-repeat center;
+        -webkit-mask-size: contain;
+
+        mask: url('/blog/hacking/bars.svg') no-repeat center;
+        mask-size: contain;
+      }
+
       @media (prefers-color-scheme: dark) {
       body {
         background-color: #121212; /* very dark grey / almost black */
@@ -62,4 +75,6 @@
       .orange {color: orange;}
       .cyan {color: cyan;}
       .theme-text {color: white;}
+
+      .three-bars {background-color: white;}
     }
