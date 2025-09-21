@@ -22,6 +22,7 @@
         padding: 0 1rem;
       }
       .theme-text {color: black;}
+      .fake-pre {white-space: pre; font-family: monospace;}
       @media (prefers-color-scheme: dark) {
       body {
         background-color: #121212; /* very dark grey / almost black */

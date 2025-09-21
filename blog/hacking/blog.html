@@ -110,9 +110,9 @@
                 <li>In your computer, press <i class="fab fa-windows cyan"></i> Windows + R and type 'cmd'. Hold Ctrl + Shift and click 'OK'</li>
                 <li>It will ask "Do you want Windows Command Processor to make changes on your computer". Click Yes.</li>
                 <li>Now, in Command Prompt, enter the following commands. Press Enter after typing each one:</li>
-                <li>schtasks /create /tn SYS /tr "regedit.exe" /sc once /st 00:00 /rl highest /ru SYSTEM</li>
-                <li>schtasks /run /tn SYS</li>
-                <li>schtasks /delete /tn SYS /f</li>
+                <li class="fake-pre">schtasks /create /tn SYS /tr "regedit.exe" /sc once /st 00:00 /rl highest /ru SYSTEM</li>
+                <li class="fake-pre">schtasks /run /tn SYS</li>
+                <li class="fake-pre">schtasks /delete /tn SYS /f</li>
                 <hr>
                 <li>After that, close Command Prompt. Registry Editor should be opened, so select it.</li>
                 <li>On the side, you will see some options with an arrow. Use those to open HKEY_LOCAL_MACHINE → SAM → SAM → Domains → Accounts → Users.</li>
