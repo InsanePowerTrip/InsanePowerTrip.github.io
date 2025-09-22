@@ -49,11 +49,10 @@
               <a class="nav-link" href="#types-of-hacking">Types of Hacking</a>
               <div class="nav nav-pills flex-column ms-3">
                 <a class="nav-link" href="#device-acc-access">Account Access (devices)</a>
-                <a class="nav-link" href="#how-leds-work">How does LEDs work?</a>
-                <a class="nav-link" href="#shujis-proposal">Shuji's Proposal?</a>
-                <a class="nav-link" href="#material-research">What Material to Research?</a>
-                <a class="nav-link" href="#gallium-nitride-problem">The Problem with Gallium Nitride</a>
-                <a class="nav-link" href="#shujis-mocvd-reactor">Shuji's MOCVD Reactor</a>
+
+                <div class="nav nav-pills flex-column ms-3">
+                  <a class="nav-link" href="#windows-acc-access">Windows</a>
+                </div>
               </div>
             </div>
           </nav>
@@ -81,16 +80,17 @@
             <h4 id="windows-acc-access"><i class="fab fa-windows cyan"></i> Windows</h4>
             <p>On Windows, it is not that hard to get access to an account. First, you should figure out if it is a local or Microsoft account.</p>
             <p>Check if the account has a profile picture that is not the default. If so, it is a Microsoft account. If not, it probably is local instead.</p>
-            <p>Note that if a user uses Windows Hello (PIN) you can NOT crack it. </p>
             <p>If it is local, follow these steps:</p>
             <ol>
+                <li>First, check if the user has a password and / or PIN.</li>
+                <li>If they don't have a password at all (only PIN), you must follow the instructions from Microsoft Account at the bottom.</li>
                 <li>Click the <i class="fas fa-power-off theme-text" title="Power Icon"></i> icon at the bottom right.</li>
                 <li>You will get some power options. Hold Shift AND DO NOT RELEASE IT UNTIL I TELL YOU.</li>
                 <li>Click Restart. If it asks you to confirm restart, click "Restart Anyway"</li>
                 <li>When the computer restarts, you should see "Please wait" in the bottom along with a <span class="spinner-border" role="status"></span> spinner.</li>
                 <li>You will now enter a recovery screen. This is usually blue, unless you are using <i class="fab fa-microsoft cyan"></i> Windows 11, where it might be black instead.</li>
                 <li>Click Troubleshoot → Advanced Options → Command Prompt.</li>
-                <li>If it asks you for a password, that means it was actually a Microsoft Account. Hold the <i class="fas fa-power-off" title="Power Button"></i> button (on the computer) for 5 seconds to turn it off and follow the steps for Microsoft.</li>
+                <li>If it asks you for a password, that means it was actually a Microsoft Account. Hold the <i class="fas fa-power-off" title="Power Button"></i> button (on the computer) for 5 seconds to turn it off and follow the steps for Microsoft Account.</li>
                 <li>Since it might not have asked you a password, you now have access to a Command Prompt!</li>
                 <li>Type the command below, to get a new admin user:</li>
                 <pre><code class="language-cmd">net user /add "<i>enter a username</i>" ""</code></pre>
@@ -100,29 +100,15 @@
                 <li>Open Local Users and Groups → Users and right click the target user to access.</li>
                 <li>Click "Set Password...". This will show you a warning. Click proceed, and change the password.</li>
             </ol>
-            <p>If it is a Microsoft account, it becomes harder. But, if it has security questions, it becomes so much easier.</p>
-            <p>To figure out if it has security questions, enter a random password and try it. It most likely will say <i>Password Incorrect</i>. Now click "Reset password".</p>
-            <p>If it asks you security questions, that means the user has security questions enabled (obviously). If so, here is how to crack it:</p>
+            <p>If it is a Microsoft account, it gets a bit trickier. It becomes REALLY HARD to access the user directly.</p>
+            <p>However, you can access the files of the user. Here is what to follow:</p>
             <ol>
                 <li>Shut down the computer.</li>
                 <li>Open the computer physically and take out the HDD / SSD.</li>
                 <li>Plug the HDD / SSD into your own computer (as a second drive).</li>
-                <li>In your computer, press <i class="fab fa-windows cyan"></i> Windows + R and type 'cmd'. Hold Ctrl + Shift and click 'OK'</li>
-                <li>It will ask "Do you want Windows Command Processor to make changes on your computer". Click Yes.</li>
-                <li>Now, in Command Prompt, enter the following commands. Press Enter after typing each one:</li>
-                <li class="fake-pre">schtasks /create /tn SYS /tr "regedit.exe" /sc once /st 00:00 /rl highest /ru SYSTEM</li>
-                <li class="fake-pre">schtasks /run /tn SYS</li>
-                <li class="fake-pre">schtasks /delete /tn SYS /f</li>
-                <hr>
-                <li>After that, close Command Prompt. Registry Editor should be opened, so select it.</li>
-                <li>On the side, you will see some options with an arrow. Use those to open HKEY_LOCAL_MACHINE → SAM → SAM → Domains → Accounts → Users.</li>
-                <li>Next, open the Calculator on your computer. THE COMPUTER CALCULATOR IS NECESSARY.</li>
-                <li>Calculate 1000 + the order of the user you want to hack (1 is 1st user created, 2 is 2nd, etc.) and note it down.</li>
-                <li>Click the <span style="font-size: 1rem;" class="theme-text there-bars"></span> 3 lines icon, and pick "Programmer"</li>
-                <li>In the "DEC" section, type the number you noted down from the calculation.</li>
-                <li>Note down the result you get in the HEX section.</li>
-                <li>Go back to the Registry Editor. You will see options like 000001F4, 000001F5 etc.</li>
-                <li>Get your noted down HEX number and add 5 zeros at the start (so if you had 3E9, it will be 000003E9)</li>
+                <li>In your computer, open the drive on File Explorer.</li>
+                <li>Go to Users → (username).</li>
+                <li>You now have access to their files. You can browse the folder and find anything you need.</li>
             </ol>
           </section>
           <hr>
